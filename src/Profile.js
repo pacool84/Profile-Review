@@ -31,6 +31,15 @@ const Profile = () => {
     });
   };
 
+  const randomProfile = () => {
+    let randomNumber = Math.floor(Math.random() * people.length);
+    if (randomNumber === index) {
+      randomNumber = index + 1;
+    }
+    setIndex(checkIndex(randomNumber));
+    console.log(randomNumber);
+  };
+
   return (
     <article className='profile'>
       <div className='profile_image'>
@@ -52,7 +61,9 @@ const Profile = () => {
           />
         </button>
       </div>
-      <button className='profile_button-random'>Random Profile</button>
+      <button className='profile_button-random' onClick={randomProfile}>
+        Random Profile
+      </button>
     </article>
   );
 };
