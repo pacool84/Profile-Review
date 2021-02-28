@@ -3,7 +3,7 @@ import people from "./data";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import "./profile.css";
 const Profile = () => {
-  const [index, setIndex] = useState(2);
+  const [index, setIndex] = useState(3);
   console.log(people);
   const { name, job, image, text } = people[index];
 
@@ -18,10 +18,11 @@ const Profile = () => {
       <p className='profile_description'>{text}</p>
       <div>
         <button>
-          <FaChevronLeft />
-          <FaChevronRight />
+          <FaChevronLeft className='profile_button-left' />
+          <FaChevronRight className='profile_button-right' />
         </button>
       </div>
+      <button className='profile_button-random'>Random Profile</button>
     </article>
   );
 };
