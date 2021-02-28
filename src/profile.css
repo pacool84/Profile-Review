@@ -45,8 +45,9 @@
 }
 
 .profile_description {
+  height: 80px;
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   color: #00bcd4;
 }
 
@@ -54,6 +55,7 @@
   background-color: transparent;
   border: none;
   margin-bottom: 15px;
+  outline: none;
 }
 
 .profile_button-left {
