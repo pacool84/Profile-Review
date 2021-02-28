@@ -7,17 +7,27 @@ const Profile = () => {
   console.log(people);
   const { name, job, image, text } = people[index];
 
+  const checkIndex = (number) => {
+    if (number > people.length - 1) {
+      return 0;
+    }
+    if (number < 0) {
+      return people.length - 1;
+    }
+    return number;
+  };
+
   const nextProfile = () => {
     setIndex((index) => {
       let newIndex = index + 1;
-      return newIndex;
+      return checkIndex(newIndex);
     });
   };
 
   const previousProfile = () => {
     setIndex((index) => {
       let newIndex = index - 1;
-      return newIndex;
+      return checkIndex(newIndex);
     });
   };
 
