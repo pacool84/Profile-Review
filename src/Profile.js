@@ -3,9 +3,23 @@ import people from "./data";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import "./profile.css";
 const Profile = () => {
-  const [index, setIndex] = useState(3);
+  const [index, setIndex] = useState(0);
   console.log(people);
   const { name, job, image, text } = people[index];
+
+  const nextProfile = () => {
+    setIndex((index) => {
+      let newIndex = index + 1;
+      return newIndex;
+    });
+  };
+
+  const previousProfile = () => {
+    setIndex((index) => {
+      let newIndex = index - 1;
+      return newIndex;
+    });
+  };
 
   return (
     <article className='profile'>
@@ -18,8 +32,14 @@ const Profile = () => {
       <p className='profile_description'>{text}</p>
       <div>
         <button>
-          <FaChevronLeft className='profile_button-left' />
-          <FaChevronRight className='profile_button-right' />
+          <FaChevronLeft
+            className='profile_button-left'
+            onClick={previousProfile}
+          />
+          <FaChevronRight
+            className='profile_button-right'
+            onClick={nextProfile}
+          />
         </button>
       </div>
       <button className='profile_button-random'>Random Profile</button>
